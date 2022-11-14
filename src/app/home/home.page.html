@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      ion-textarea scroll bug
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">ion-textarea scroll bug</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <h2>Current behavior</h2>
+    <p>
+      Unable to scroll in textarea using either scrollwheel or a scroll bar.
+    </p>
+
+    <h3>Plain Textarea</h3>
+    <ion-textarea [value]="longText" rows="5"></ion-textarea>
+
+    <h3>In ion-item</h3>
+    <ion-list>
+      <ion-item>
+        <ion-label>Textarea</ion-label>
+        <ion-textarea [value]="longText" rows="5"></ion-textarea>
+      </ion-item>
+    </ion-list>
+
+    <h2>Expected behavior</h2>
+    <p>
+      Scroll bars appear when text in textarea exceeds height of textarea.
+    </p>
+
+    <h3>Plain Textarea with fix</h3>
+    <ion-textarea class="fix" [value]="longText" rows="5"></ion-textarea>
+
+    <h3>In ion-item with fix</h3>
+    <ion-list>
+      <ion-item>
+        <ion-label>Textarea</ion-label>
+        <ion-textarea class="fix" [value]="longText" rows="5"></ion-textarea>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
